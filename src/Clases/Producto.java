@@ -21,6 +21,7 @@ abstract public class Producto {
         while(true){
             try{
                 codigo = in.nextInt();
+                break;
             }catch (Exception e){
                 System.out.println("El codigo introducido es incorrecto");
             }

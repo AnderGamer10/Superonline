@@ -20,42 +20,44 @@ public class main {
                 "           tecla:0 - Terminar");
         System.out.println("=========================================================");
         System.out.println("Opcion: ");
-        Scanner sc = new Scanner(System.in);
-        String opcion = sc.nextLine();
-        while (opcion != "0"){
-            String continuar;
-            switch (opcion){
-                case "1":
-                    System.out.println("    [[Cargando productos...]]");
-//                    Cargar los productos
-                    System.out.println("    [[...Productos cargados en inventario]]\n");
-                    System.out.println("(pulsa 0 para continuar)");
-                    continuar = sc.nextLine();
-                    if (continuar == "0"){
-                        System.out.println("Bien");
-                    }
-                    break;
-                case "2":
-                    System.out.println("**** Lista completa de productos catalogados---------------");
-//                    Mostar el inventario
-                    System.out.println("(pulsa 0 para continuar)");
-                    continuar = sc.nextLine();
-                    if (continuar == "0"){
-                        System.out.println("Bien");
-                    }
-                    break;
-                case "3":
-                    System.out.println("**** Lista completa de productos catalogados---------------");
-//                    Mostar el inventario
-                    System.out.println("0 - Finalizar actualizacion del inventario");
-                    System.out.println("Elige el numero del producto a actualizar, tecla:x (/ - 0");
-                    System.out.println("Opcion: ");
-                    break;
-            }
-        }
+        leerOpcion(6);
+
+
+//        if (opcion != "0"){
+//            String continuar;
+//            switch (opcion){
+//                case "1":
+//                    System.out.println("    [[Cargando productos...]]");
+////                    Cargar los productos
+//                    System.out.println("    [[...Productos cargados en inventario]]\n");
+//                    System.out.println("(pulsa 0 para continuar)");
+//                    continuar = sc.nextLine();
+//                    if (continuar == "0"){
+//                        System.out.println("Bien");
+//                    }
+//                    break;
+//                case "2":
+//                    System.out.println("**** Lista completa de productos catalogados---------------");
+////                    Mostar el inventario
+//                    System.out.println("(pulsa 0 para continuar)");
+//                    continuar = sc.nextLine();
+//                    if (continuar == "0"){
+//                        System.out.println("Bien");
+//                    }
+//                    break;
+//                case "3":
+//                    System.out.println("**** Lista completa de productos catalogados---------------");
+////                    Mostar el inventario
+//                    System.out.println("0 - Finalizar actualizacion del inventario");
+//                    System.out.println("Elige el numero del producto a actualizar, tecla:x (/ - 0");
+//                    System.out.println("Opcion: ");
+//                    break;
+//            }
+//        }
 
 
     }
+
     private void MostrarMenuInventario(){
 
     }
@@ -66,9 +68,18 @@ public class main {
     private void mostrarMenuAddNuevoProducto(){
 
     }
-    private int leerOpcion(int max){
-
-        return max;
+    private static int leerOpcion(int max){
+        Scanner sc = new Scanner(System.in);
+//        String opcion = sc.nextLine();
+        while (true){
+            try{
+                int opcion = sc.nextInt();
+                break;
+            }catch (Exception e){
+                System.out.println("El codigo introducido es incorrecto");
+            }
+        }
+//        return max;
     }
     private Producto nuevoProducto(){
 
