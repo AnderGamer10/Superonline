@@ -6,8 +6,8 @@ public class Bebida extends Perecedero{
     private String graduacion;
     private double VALOR_IVA = 0.16;
 
-    public Bebida(double precio, double peso, int codigo, int cantidad, String nombre, String fechaCad, String graduacion) {
-        super(precio, peso, codigo, cantidad, nombre, fechaCad);
+    public Bebida(int codigo,String nombre, double precio, double peso, int cantidad, String fechaCad, String graduacion) {
+        super(codigo, nombre, precio, peso, cantidad,  fechaCad);
         this.graduacion = graduacion;
     }
 
@@ -18,7 +18,7 @@ public class Bebida extends Perecedero{
                 graduacion = String.valueOf(in.nextInt());
                 break;
             }catch (Exception e){
-                System.out.println("El codigo introducido es incorrecto");
+                System.out.println("Graduacion mal introducida");
             }
         }
     }
@@ -31,6 +31,7 @@ public class Bebida extends Perecedero{
     @Override
     public void imprimir() {
         super.imprimir();
+        System.out.println("Graduación: " + graduacion);
     }
 
     @Override

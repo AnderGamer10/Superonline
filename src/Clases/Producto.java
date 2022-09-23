@@ -10,7 +10,7 @@ abstract public class Producto {
     public Producto(){
 
     }
-    public Producto(double precio, double peso, int codigo, int cantidad, String nombre) {
+    public Producto(int codigo, String nombre,double precio, double peso,int cantidad) {
         this.precio = precio;
         this.peso = peso;
         this.codigo = codigo;
@@ -18,27 +18,62 @@ abstract public class Producto {
         this.nombre = nombre;
     }
     public Producto(Scanner in){
-        while(true){
+        codigo = Inventario.tamaño()+1;
+        System.out.println("Introduce un nombre:");
+        while (true){
             try{
-                codigo = in.nextInt();
+                nombre = in.nextLine();
                 break;
             }catch (Exception e){
-                System.out.println("El codigo introducido es incorrecto");
+                System.out.println("nombre incorrecto, vuelva a introducirlo");
+                in.nextLine();
+            }
+        }
+
+        System.out.println("Introduce un precio:");
+        while (true){
+            try{
+                precio = in.nextDouble();
+                break;
+            }catch (Exception e){
+                System.out.println("Precio incorrecto, vuelva a introducirlo");
+                in.nextLine();
+            }
+        }
+
+        System.out.println("Introduce un peso:");
+        while (true){
+            try{
+                peso = in.nextDouble();
+                break;
+            }catch (Exception e){
+                System.out.println("Peso incorrecto, vuelva a introducirlo");
+                in.nextLine();
+            }
+        }
+
+        System.out.println("Introduce una cantidad:");
+        while (true){
+            try{
+                cantidad = in.nextInt();
+                break;
+            }catch (Exception e){
+                System.out.println("Cantidad incorrecta, vuelva a introducirlo");
+                in.nextLine();
             }
         }
     }
 
     public double calcularPrecioIVA(){
-        return 0;
+        return (precio * getIva()) * precio;
     }
     public void imprimir(){
-
+        System.out.println("Codigo del producto: " + getCodigo() + " \nNombre del producto: " + getNombre() + " \nStock del producto: " + getCantidad() + " \nPrecio del producto: " + getPrecio());
     }
     public void imprimirEnvio(){
-
+        System.out.println("Codigo del producto: " + getCodigo() + " \nNombre del producto: " + getNombre() + " \nPeso del producto: " + getPeso() + " \nIVA: " + calcularPrecioIVA());
     }
     public String volcar(){
-
         return null;
     }
 

@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Herramienta extends NoPerecedero implements Enviable {
     private double VALOR_IVA = 0.4;
 
-    public Herramienta(double precio, double peso, int codigo, int cantidad, String nombre) {
-        super(precio, peso, codigo, cantidad, nombre);
+    public Herramienta(int codigo,String nombre, double precio, double peso, int cantidad) {
+        super(codigo, nombre, precio, peso, cantidad);
     }
 
     public Herramienta(Scanner in) {
@@ -33,6 +33,7 @@ public class Herramienta extends NoPerecedero implements Enviable {
     @Override
     public void imprimir() {
         super.imprimir();
+        System.out.println("Herramienta");
     }
 
     @Override

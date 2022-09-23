@@ -6,8 +6,8 @@ public class FrutaHortaliza extends Perecedero{
     private String origen;
     private double VALOR_IVA = 0.16;
 
-    public FrutaHortaliza(double precio, double peso, int codigo, int cantidad, String nombre, String fechaCad, String origen) {
-        super(precio, peso, codigo, cantidad, nombre, fechaCad);
+    public FrutaHortaliza(int codigo,String nombre, double precio, double peso, int cantidad, String fechaCad, String origen) {
+        super(codigo, nombre, precio, peso, cantidad,  fechaCad);
         this.origen = origen;
     }
 
@@ -18,7 +18,7 @@ public class FrutaHortaliza extends Perecedero{
                 origen = String.valueOf(in.nextInt());
                 break;
             }catch (Exception e){
-                System.out.println("El codigo introducido es incorrecto");
+                System.out.println("Origen mal introducido");
             }
         }
     }
@@ -29,12 +29,16 @@ public class FrutaHortaliza extends Perecedero{
     }
 
     @Override
-    public void imprimirEnvio() {
-        super.imprimirEnvio();
+    public void imprimir() {
+        super.imprimir();
+        System.out.print("Origen: " + origen);
     }
-
     @Override
     public boolean envioFragil() {
         return super.envioFragil();
+    }
+
+    public void calcularPrecioEnvio(){
+
     }
 }

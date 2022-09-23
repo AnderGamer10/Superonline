@@ -7,19 +7,21 @@ import java.util.Scanner;
 abstract public class Perecedero extends Producto implements Enviable {
     private String fechaCad;
 
-    public Perecedero(double precio, double peso, int codigo, int cantidad, String nombre, String fechaCad) {
-        super(precio, peso, codigo, cantidad, nombre);
+    public Perecedero(int codigo,String nombre,double precio, double peso, int cantidad,  String fechaCad) {
+        super(codigo, nombre, precio, peso, cantidad);
         this.fechaCad = fechaCad;
     }
 
     public Perecedero(Scanner in) {
         super(in);
+        System.out.println("Introduce una fecha de caducidad:");
         while(true){
             try{
                 fechaCad = String.valueOf(in.nextInt());
                 break;
             }catch (Exception e){
-                System.out.println("El codigo introducido es incorrecto");
+                System.out.println("La fecha ha sido mal introducida");
+                in.nextLine();
             }
         }
     }
@@ -27,11 +29,13 @@ abstract public class Perecedero extends Producto implements Enviable {
     @Override
     public void imprimir() {
         super.imprimir();
+        System.out.println("Fecha de caducidad: " + fechaCad);
     }
 
     @Override
     public void imprimirEnvio() {
         super.imprimirEnvio();
+        System.out.println("Tarifa de envio: " + tarifaEnvio() + " \nPrecio total: " + getPrecio());
     }
 
     @Override

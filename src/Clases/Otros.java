@@ -6,8 +6,8 @@ public class Otros extends NoPerecedero{
     private String categoria;
     private double VALOR_IVA = 0.16;
 
-    public Otros(double precio, double peso, int codigo, int cantidad, String nombre, String categoria) {
-        super(precio, peso, codigo, cantidad, nombre);
+    public Otros(int codigo,String nombre, double precio, double peso, int cantidad, String categoria) {
+        super(codigo, nombre, precio, peso, cantidad);
         this.categoria = categoria;
     }
 
@@ -18,7 +18,7 @@ public class Otros extends NoPerecedero{
                 categoria = String.valueOf(in.nextInt());
                 break;
             }catch (Exception e){
-                System.out.println("El codigo introducido es incorrecto");
+                System.out.println("Categoria mal introducida");
             }
         }
     }
@@ -31,5 +31,6 @@ public class Otros extends NoPerecedero{
     @Override
     public void imprimir() {
         super.imprimir();
+        System.out.println("Categoría: " + categoria);
     }
 }
