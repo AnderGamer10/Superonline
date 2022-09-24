@@ -47,4 +47,9 @@ abstract public class Perecedero extends Producto implements Enviable {
     public double tarifaEnvio() {
         return Enviable.super.tarifaEnvio();
     }
+
+    @Override
+    public String volcar() {
+        return super.volcar();
+    }
 }

@@ -13,12 +13,14 @@ public class Otros extends NoPerecedero{
 
     public Otros(Scanner in) {
         super(in);
+        System.out.println("Introduce la categoria");
         while(true){
             try{
                 categoria = String.valueOf(in.nextInt());
                 break;
             }catch (Exception e){
                 System.out.println("Categoria mal introducida");
+                in.nextLine();
             }
         }
     }

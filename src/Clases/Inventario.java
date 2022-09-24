@@ -17,15 +17,15 @@ public class Inventario {
     public static void cargarProductos(){
         getInstance();
         System.out.println("[[Cargando productos...]]");
-        Producto p1 = new Lacteo(  1,  "Queso-Cheedar",  1.50,  14,  20 ,"21/09/2022" ,"210");
-        Producto p2 = new Lacteo(  2,  "Leche-Kaiku",  0.50,  34,  29 ,"23/09/2022" ,"111");
-        Producto p3 = new Lacteo(  3,  "Yogur-Danone ",  0.40,  10,  17,"20/09/2022" ,"421");
-        Producto p4 = new Bebida(  4,  "CocaCola",  2.50,  40,  4 ,"21/09/2022","0");
-        Producto p5 = new Bebida(  5,  "Heineken 0.0",  2.00,  40,  4 ,"21/09/2022","0");
-        Producto p6 = new Bebida(  6,  "Heineken",  2.50,  40,  4 ,"21/09/2022","4.3");
-        Producto p7 = new FrutaHortaliza(  7,  "Esparragos",  1.50,  33,  10,"21/09/2022","Peru");
-        Producto p8 = new FrutaHortaliza(  8,  "Alcachofas",  3.50,  12,  6,"21/09/2022","Tudela");
-        Producto p9 = new FrutaHortaliza(  9,  "Acelgas",  2.50,  65,  25,"21/09/2022","La Rioja");
+        Producto p1 = new Lacteo(  1,  "Yogur-Danone",  1.50,  1,  20 ,"21/11/2022" ,"310");
+        Producto p2 = new Lacteo(  2,  "Leche Entera",  1,  2,  29 ,"30/09/2022" ,"161");
+        Producto p3 = new Lacteo(  3,  "Yogur-Griego",  2,  1.6,  56,"20/09/2022" ,"236");
+        Producto p4 = new Bebida(  4,  "Aquarius",  3.6,  2,  25 ,"29/09/2022","0");
+        Producto p5 = new Bebida(  5,  "Vodka",  13.00,  4,  17 ,"21/09/2030","40");
+        Producto p6 = new Bebida(  6,  "Whisky",  25,  5,  7 ,"25/11/2050","43");
+        Producto p7 = new FrutaHortaliza(  7,  "Manzana",  1,  0.4,  300,"25/10/2022","Argentina");
+        Producto p8 = new FrutaHortaliza(  8,  "Platano",  3.50,  5,  160,"08/01/2023","España");
+        Producto p9 = new FrutaHortaliza(  9,  "Acelgas",  2.50,  2,  25,"21/09/2022","La Rioja");
         Producto p10 = new Herramienta(  10,  "Martillo",  12.50,  35,  36);
         Producto p11 = new Herramienta(  11,  "Destornillador",  10.50,  45,  15);
         Producto p12 = new Herramienta(  12,  "Taladro",  68.00,  15,  40);
@@ -58,7 +58,7 @@ public class Inventario {
         });
     }
     public static Producto getProducto(int id){
-        return listaProductos.get(id);
+        return listaProductos.get(id-1);
     }
     public static void actualizarCantidad(int codigo, int cant){
         listaProductos.get(codigo).setCantidad(cant);

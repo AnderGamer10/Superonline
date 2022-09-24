@@ -30,9 +30,9 @@ public class main {
                     Producto p;
                     while (opcion!=0) {
                         Inventario.mostrarProductos();
-                        System.out.println("0 - Finalizar actualizaciÃ³n del inventario");
+                        System.out.println("0 - Finalizar actualización del inventario");
                         System.out.println("Elige el nÃºmero del producto a actualizar, tecla:x (/= 0):");
-                        System.out.println("OpciÃ³n? ");
+                        System.out.println("Opción? ");
                         opcion = leerOpcion(Inventario.tamaño()+1); //se han mostrado todos los articulos (talla) + opcion de salida
                         if (opcion!=0) {
                             p = Inventario.getProducto(opcion);  //el mismo producto
@@ -42,7 +42,7 @@ public class main {
                             in.nextLine();
                             p.setCantidad(cant);   //actualiza el mismo producto del inventario
                             //NO ES NECESARIA LA ACTUALIZACIÃ“N DESDE INVENTARIO!!
-                            System.out.println("Producto actualizado: "+p.getNombre()+", Nueva cantidad en almacÃ©n: "+p.getCantidad());
+                            System.out.println("Producto actualizado: "+p.getNombre()+", Nueva cantidad en almacén: "+p.getCantidad());
                             System.out.println();
                             pause();
                         }
@@ -79,7 +79,7 @@ public class main {
         System.out.println("            tecla:1   - Cargar productos");
         System.out.println("            tecla:2   - Mostrar inventario");
         System.out.println("            tecla:3   - Actualizar existencias");
-        System.out.println("            tecla:4   - AÃ±adir nuevo producto");
+        System.out.println("            tecla:4   - Añadir nuevo producto");
         System.out.println("            tecla:5   - Mostrar productos enviables");
         System.out.println("            tecla:6   - Guardar inventario");
         System.out.println("            tecla:0   - Terminar");
@@ -89,7 +89,7 @@ public class main {
 
     public static void mostrarMenuAddNuevoProducto() {// ver productos y escoger uno
         System.out.println("====================================================");
-        System.out.println("=   Elige el tipo de producto que quieres aÃ±adir:  =");
+        System.out.println("=   Elige el tipo de producto que quieres añadir:  =");
         System.out.println("====================================================");
         System.out.println("         tecla:1 - Lacteo");
         System.out.println("         tecla:2 - Frutas u hortalizas");

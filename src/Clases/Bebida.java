@@ -13,12 +13,14 @@ public class Bebida extends Perecedero{
 
     public Bebida(Scanner in) {
         super(in);
+        System.out.println("Introduce la graduacion");
         while(true){
             try{
                 graduacion = String.valueOf(in.nextInt());
                 break;
             }catch (Exception e){
                 System.out.println("Graduacion mal introducida");
+                in.nextLine();
             }
         }
     }
