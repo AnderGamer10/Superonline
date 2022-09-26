@@ -74,7 +74,7 @@ public class main {
 
     public static void mostrarMenuInventario() {// ver productos del super ordenados
         System.out.println("====================================================================");
-        System.out.println("=            MENU PRINCIPAL - GESTIÃ“N DE INVENTARIO                =");
+        System.out.println("=            MENU PRINCIPAL - GESTIÓN DE INVENTARIO                =");
         System.out.println("====================================================================");
         System.out.println("            tecla:1   - Cargar productos");
         System.out.println("            tecla:2   - Mostrar inventario");
