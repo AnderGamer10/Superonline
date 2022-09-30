@@ -33,6 +33,6 @@ public class Otros extends NoPerecedero{
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Categoría: " + categoria);
+        System.out.println(" Categoría: " + categoria);
     }
 }

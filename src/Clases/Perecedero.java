@@ -17,11 +17,10 @@ abstract public class Perecedero extends Producto implements Enviable {
         System.out.println("Introduce una fecha de caducidad:");
         while(true){
             try{
-                fechaCad = String.valueOf(in.nextInt());
+                fechaCad = in.nextLine();
                 break;
             }catch (Exception e){
                 System.out.println("La fecha ha sido mal introducida");
-                in.nextLine();
             }
         }
     }
@@ -29,7 +28,7 @@ abstract public class Perecedero extends Producto implements Enviable {
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Fecha de caducidad: " + fechaCad);
+        System.out.print(" Fecha de caducidad: " + fechaCad);
     }
 
     @Override

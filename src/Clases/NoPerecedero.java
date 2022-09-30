@@ -14,6 +14,6 @@ public class NoPerecedero extends Producto{
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Producto no perecedero");
+        System.out.print(" Producto no perecedero ");
     }
 }

@@ -26,7 +26,6 @@ abstract public class Producto {
                 break;
             }catch (Exception e){
                 System.out.println("nombre incorrecto, vuelva a introducirlo");
-                in.nextLine();
             }
         }
 
@@ -37,6 +36,7 @@ abstract public class Producto {
                 break;
             }catch (Exception e){
                 System.out.println("Precio incorrecto, vuelva a introducirlo");
+            }finally {
                 in.nextLine();
             }
         }
@@ -48,6 +48,7 @@ abstract public class Producto {
                 break;
             }catch (Exception e){
                 System.out.println("Peso incorrecto, vuelva a introducirlo");
+            }finally {
                 in.nextLine();
             }
         }
@@ -59,6 +60,7 @@ abstract public class Producto {
                 break;
             }catch (Exception e){
                 System.out.println("Cantidad incorrecta, vuelva a introducirlo");
+            }finally {
                 in.nextLine();
             }
         }
@@ -68,10 +70,10 @@ abstract public class Producto {
         return (precio * getIva()) * precio;
     }
     public void imprimir(){
-        System.out.println("Codigo del producto: " + getCodigo() + " \nNombre del producto: " + getNombre() + " \nStock del producto: " + getCantidad() + " \nPrecio del producto: " + getPrecio());
+        System.out.print("Id: " + getCodigo() + " Nombre: " + getNombre() + " Stock " + getCantidad() + " Precio " + getPrecio());
     }
     public void imprimirEnvio(){
-        System.out.println("Codigo del producto: " + getCodigo() + " \nNombre del producto: " + getNombre() + " \nPeso del producto: " + getPeso() + " \nIVA: " + calcularPrecioIVA());
+        System.out.println("Id: " + getCodigo() + " Nombre: " + getNombre() + " Peso " + getPeso() + " IVA: " + calcularPrecioIVA());
     }
     public String volcar(){
         return null;
