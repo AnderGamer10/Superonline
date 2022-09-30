@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class Bebida extends Perecedero{
     private String graduacion;
-    private double VALOR_IVA = 0.16;
+    private final double VALOR_IVA = 0.16;
 
     public Bebida(int codigo,String nombre, double precio, double peso, int cantidad, String fechaCad, String graduacion) {
         super(codigo, nombre, precio, peso, cantidad,  fechaCad);
         this.graduacion = graduacion;
+        setIva(VALOR_IVA);
     }
 
     public Bebida(Scanner in) {
@@ -27,7 +28,7 @@ public class Bebida extends Perecedero{
 
     @Override
     public String volcar() {
-        return super.volcar();
+        return super.volcar() + " " + graduacion + " Bebida";
     }
 
     @Override

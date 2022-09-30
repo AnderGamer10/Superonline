@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class Lacteo extends Perecedero {
     private String lote;
-    private double VALOR_IVA = 0.04;
+    private final double VALOR_IVA = 0.04;
 
     public Lacteo(int codigo,String nombre, double precio, double peso, int cantidad,String fechaCad, String lote) {
         super(codigo, nombre, precio, peso, cantidad,  fechaCad);
         this.lote = lote;
+        setIva(VALOR_IVA);
     }
 
     public Lacteo(Scanner in) {
@@ -27,7 +28,7 @@ public class Lacteo extends Perecedero {
 
     @Override
     public String volcar() {
-        return super.volcar();
+        return super.volcar() + " " + lote + " Lacteo";
     }
 
     @Override

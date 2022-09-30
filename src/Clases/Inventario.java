@@ -1,11 +1,14 @@
 package Clases;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import Interfaces.Enviable;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 public class Inventario {
-
+    private static Path archivoProductos = Path.of("src/data/productos.txt");
     private static ArrayList<Producto> listaProductos;
     private static Inventario instance;
     private Inventario(){
@@ -19,17 +22,12 @@ public class Inventario {
     }
     public static void cargarProductos(){
         System.out.println("[[Cargando productos...]]");
-//        Producto p1 = new Lacteo(  1,  "Yogur-Danone",  1.50,  1,  20 ,"21/11/2022" ,"310");
-//        Producto p6 = new Bebida(  6,  "Whisky",  25,  5,  7 ,"25/11/2050","43");
-//        Producto p7 = new FrutaHortaliza(  7,  "Manzana",  1,  0.4,  300,"25/10/2022","Argentina");
-//        Producto p12 = new Herramienta(  12,  "Taladro",  68.00,  15,  40);
-//
-//        addNuevoProducto(p1);
         File archivo = null;
         FileReader fr = null;
         BufferedReader br = null;
         try {
-            archivo = new File("C:\\Users\\2dam3.HZ114485\\IdeaProjects\\SuperOnline\\src\\Info\\productos.txt");
+//            archivo = new File("C:\\Users\\2dam3.HZ114485\\IdeaProjects\\SuperOnline\\src\\Info\\productos.txt");
+            archivo = new File(archivoProductos.toUri());
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
 
@@ -70,7 +68,18 @@ public class Inventario {
         System.out.println("[[Productos cargados en inventario!]]");
     }
     public static void guardarProductos(){
-
+        try {
+            Files.writeString(archivoProductos, "");
+            listaProductos.forEach(producto -> {
+                try {
+                    Files.writeString(archivoProductos, producto.volcar() + System.lineSeparator(), StandardOpenOption.APPEND);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
     }
     public static void addNuevoProducto(Producto tipo){
         listaProductos.add(tipo);
@@ -93,7 +102,11 @@ public class Inventario {
         return listaProductos.size();
     }
     public static void mostarProductosEnviables(){
-
+        listaProductos.forEach(producto -> {
+            if(producto != null){
+                producto.imprimirEnvio();
+            }
+        });
     }
     public static void eliminarProducto(int id){
         listaProductos.remove(id);

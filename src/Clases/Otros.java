@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class Otros extends NoPerecedero{
     private String categoria;
-    private double VALOR_IVA = 0.16;
+    private final double VALOR_IVA = 0.16;
 
     public Otros(int codigo,String nombre, double precio, double peso, int cantidad, String categoria) {
         super(codigo, nombre, precio, peso, cantidad);
         this.categoria = categoria;
+        setIva(VALOR_IVA);
     }
 
     public Otros(Scanner in) {
@@ -27,7 +28,7 @@ public class Otros extends NoPerecedero{
 
     @Override
     public String volcar() {
-        return super.volcar();
+        return super.volcar() + categoria + " Otros";
     }
 
     @Override

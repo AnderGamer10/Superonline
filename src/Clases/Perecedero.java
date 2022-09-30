@@ -49,6 +49,6 @@ abstract public class Perecedero extends Producto implements Enviable {
 
     @Override
     public String volcar() {
-        return super.volcar();
+        return super.volcar() + fechaCad;
     }
 }

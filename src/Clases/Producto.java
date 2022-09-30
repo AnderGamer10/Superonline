@@ -76,7 +76,7 @@ abstract public class Producto {
         System.out.println("Id: " + getCodigo() + " Nombre: " + getNombre() + " Peso " + getPeso() + " IVA: " + calcularPrecioIVA());
     }
     public String volcar(){
-        return null;
+        return codigo + " " + nombre + " " + precio + " " + cantidad + " " + peso + " ";
     }
 
 

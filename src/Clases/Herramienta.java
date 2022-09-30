@@ -5,10 +5,11 @@ import Interfaces.Enviable;
 import java.util.Scanner;
 
 public class Herramienta extends NoPerecedero implements Enviable {
-    private double VALOR_IVA = 0.4;
+    private final double VALOR_IVA = 0.4;
 
     public Herramienta(int codigo,String nombre, double precio, double peso, int cantidad) {
         super(codigo, nombre, precio, peso, cantidad);
+        setIva(VALOR_IVA);
     }
 
     public Herramienta(Scanner in) {
@@ -27,7 +28,7 @@ public class Herramienta extends NoPerecedero implements Enviable {
 
     @Override
     public String volcar() {
-        return super.volcar();
+        return super.volcar() + "Herramienta";
     }
 
     @Override

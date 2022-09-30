@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class FrutaHortaliza extends Perecedero{
     private String origen;
-    private double VALOR_IVA = 0.16;
+    private final double VALOR_IVA = 0.16;
 
     public FrutaHortaliza(int codigo,String nombre, double precio, double peso, int cantidad, String fechaCad, String origen) {
         super(codigo, nombre, precio, peso, cantidad,  fechaCad);
         this.origen = origen;
+        setIva(VALOR_IVA);
     }
 
     public FrutaHortaliza(Scanner in) {
@@ -27,7 +28,7 @@ public class FrutaHortaliza extends Perecedero{
 
     @Override
     public String volcar() {
-        return super.volcar();
+        return super.volcar() + " " + origen + " FrutaHortaliza";
     }
 
     @Override
