@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 abstract public class Perecedero extends Producto implements Enviable {
     private String fechaCad;
+    private final boolean Fragil = false;
+    private final double TARIFA_ENVIO = 1.71;
 
     public Perecedero(int codigo,String nombre,double precio, double peso, int cantidad,  String fechaCad) {
         super(codigo, nombre, precio, peso, cantidad);
@@ -39,16 +41,19 @@ abstract public class Perecedero extends Producto implements Enviable {
 
     @Override
     public boolean envioFragil() {
-        return Enviable.super.envioFragil();
+        return Fragil;
     }
 
     @Override
     public double tarifaEnvio() {
-        return Enviable.super.tarifaEnvio();
+        return TARIFA_ENVIO;
     }
 
     @Override
     public String volcar() {
         return super.volcar() + fechaCad;
+    }
+    public double getPeso(){
+        return super.getPeso();
     }
 }

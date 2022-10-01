@@ -24,6 +24,7 @@ public class Otros extends NoPerecedero{
                 in.nextLine();
             }
         }
+        setIva(VALOR_IVA);
     }
 
     @Override

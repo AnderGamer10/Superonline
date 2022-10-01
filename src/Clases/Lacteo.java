@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Lacteo extends Perecedero {
     private String lote;
     private final double VALOR_IVA = 0.04;
+    private final boolean Fragil = false;
 
     public Lacteo(int codigo,String nombre, double precio, double peso, int cantidad,String fechaCad, String lote) {
         super(codigo, nombre, precio, peso, cantidad,  fechaCad);
@@ -24,6 +25,7 @@ public class Lacteo extends Perecedero {
                 in.nextLine();
             }
         }
+        setIva(VALOR_IVA);
     }
 
     @Override
@@ -33,7 +35,7 @@ public class Lacteo extends Perecedero {
 
     @Override
     public boolean envioFragil() {
-        return super.envioFragil();
+        return Fragil;
     }
 
     @Override

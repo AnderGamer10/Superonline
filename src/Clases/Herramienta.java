@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Herramienta extends NoPerecedero implements Enviable {
     private final double VALOR_IVA = 0.4;
+    private final double TARIFA_ENVIO = 3.71;
+    private final boolean Fragil = false;
 
     public Herramienta(int codigo,String nombre, double precio, double peso, int cantidad) {
         super(codigo, nombre, precio, peso, cantidad);
@@ -14,16 +16,17 @@ public class Herramienta extends NoPerecedero implements Enviable {
 
     public Herramienta(Scanner in) {
         super(in);
+        setIva(VALOR_IVA);
     }
 
     @Override
     public boolean envioFragil() {
-        return Enviable.super.envioFragil();
+        return Fragil;
     }
 
     @Override
     public double tarifaEnvio() {
-        return Enviable.super.tarifaEnvio();
+        return TARIFA_ENVIO;
     }
 
     @Override
@@ -40,5 +43,8 @@ public class Herramienta extends NoPerecedero implements Enviable {
     @Override
     public void imprimirEnvio() {
         super.imprimirEnvio();
+    }
+    public double getPeso(){
+        return super.getPeso();
     }
 }

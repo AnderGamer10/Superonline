@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class FrutaHortaliza extends Perecedero{
     private String origen;
     private final double VALOR_IVA = 0.16;
+    private final boolean Fragil = false;
 
     public FrutaHortaliza(int codigo,String nombre, double precio, double peso, int cantidad, String fechaCad, String origen) {
         super(codigo, nombre, precio, peso, cantidad,  fechaCad);
@@ -24,6 +25,7 @@ public class FrutaHortaliza extends Perecedero{
                 in.nextLine();
             }
         }
+        setIva(VALOR_IVA);
     }
 
     @Override
@@ -38,10 +40,10 @@ public class FrutaHortaliza extends Perecedero{
     }
     @Override
     public boolean envioFragil() {
-        return super.envioFragil();
+        return Fragil;
     }
 
     public void calcularPrecioEnvio(){
-
+        Double precioEnvio = super.tarifaEnvio();
     }
 }
